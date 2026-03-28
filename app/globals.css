@@ -2,26 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+    --surface: #ffffff;
+    --surface-soft: #faf7f2;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-body antialiased;
+    background:
+      radial-gradient(circle at top left, rgba(201, 151, 58, 0.08), transparent 30%),
+      radial-gradient(circle at top right, rgba(27, 51, 38, 0.05), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(27, 51, 38, 0.12), transparent 36%),
+      linear-gradient(180deg, var(--surface) 0%, var(--surface-soft) 100%);
+  }
+
+  .dark body {
+    @apply text-cream bg-deep;
+    background: none;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2;
+  }
+
+  ::selection {
+    @apply bg-gold/20 text-deep;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .section-label {
+    @apply text-gold text-xs font-sans font-medium tracking-[0.3em] uppercase;
+  }
+
+  .display-heading {
+    @apply font-serif font-light leading-tight tracking-tight;
+  }
+
+  .gold-border-left {
+    @apply border-l-4 border-gold pl-6;
+  }
+
+  .prose-adgh {
+    @apply prose prose-lg max-w-none;
+  }
+
+  .dark .prose-adgh {
+    @apply prose-invert;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .section-shell {
+    @apply relative overflow-hidden border-y border-gold/10;
+    background:
+      linear-gradient(180deg, rgba(249, 251, 250, 0.98), rgba(241, 247, 243, 0.96));
+  }
+
+  .section-shell::before {
+    content: '';
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent;
+  }
+
+  .clamp-hero {
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+
+  .clamp-h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .clamp-h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
   }
 }
