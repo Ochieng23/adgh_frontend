@@ -52,14 +52,14 @@ export default function OurWorkPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 p-8 flex items-center justify-between gap-6">
+                  <div className="flex flex-1 flex-col items-start gap-5 p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
                     <div>
                       <h2 className="font-serif text-2xl font-semibold text-deep dark:text-cream group-hover:text-gold transition-colors mb-3">
                         {obj.title}
                       </h2>
                       <p className="font-sans text-muted leading-relaxed max-w-2xl">{obj.description}</p>
                     </div>
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-deep transition-all ml-4">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-gold/30 text-gold transition-all group-hover:bg-gold group-hover:text-deep md:ml-4">
                       <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </div>
                   </div>

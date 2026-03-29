@@ -43,8 +43,8 @@ export default function LeadershipPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             {/* Photo */}
             <AnimatedSection className="lg:col-span-2">
-              <div className="relative">
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative sm:pb-14">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl">
                   <Image
                     src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80"
                     alt={`${ceo.name} — ${ceo.role}`}
@@ -54,7 +54,7 @@ export default function LeadershipPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-deep/40 to-transparent" aria-hidden="true" />
                 </div>
-                <div className="absolute -bottom-4 left-4 right-4 bg-forest rounded-xl p-4 border border-gold/20 shadow-xl">
+                <div className="mt-4 rounded-xl border border-gold/20 bg-forest p-4 shadow-xl sm:absolute sm:-bottom-4 sm:left-4 sm:right-4 sm:mt-0">
                   <p className="font-serif text-cream font-semibold">{ceo.name}</p>
                   <p className="font-sans text-gold text-xs font-medium mt-0.5">{ceo.role}</p>
                   <div className="flex gap-2 mt-3">

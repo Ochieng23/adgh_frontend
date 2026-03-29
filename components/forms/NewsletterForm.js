@@ -52,7 +52,7 @@ export default function NewsletterForm({ compact = false, tone = 'dark' }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      <div className={cn('flex gap-2', compact ? 'flex-row' : 'flex-col sm:flex-row')}>
+      <div className={cn('flex flex-col gap-2 sm:flex-row', compact && 'sm:items-center')}>
         <div className="flex-1">
           <label htmlFor="newsletter-email" className="sr-only">
             Email address
@@ -84,7 +84,7 @@ export default function NewsletterForm({ compact = false, tone = 'dark' }) {
           type="submit"
           disabled={isSubmitting}
           className={cn(
-            'inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-deep font-sans font-medium text-sm',
+            'inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-sans font-medium text-deep sm:w-auto',
             'hover:bg-gold-light transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold',
             'disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0'
           )}

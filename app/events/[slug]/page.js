@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import dynamic from 'next/dynamic'
 import { Calendar, MapPin, Clock, ArrowLeft } from 'lucide-react'
 import { buildMetadata } from '@/lib/metadata'
 import { getContentBySlug, getAllContent } from '@/lib/content'
@@ -8,6 +9,8 @@ import Badge from '@/components/ui/Badge'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import GoldDivider from '@/components/ui/GoldDivider'
 import Button from '@/components/ui/Button'
+
+const ReactMarkdown = dynamic(() => import('react-markdown'), { ssr: false })
 
 export async function generateStaticParams() {
   return getAllContent('events').map((e) => ({ slug: e.slug }))
@@ -76,7 +79,7 @@ export default function EventPage({ params }) {
               )}
               {event.content && (
                 <div className="prose prose-lg prose-adgh dark:prose-invert max-w-none">
-                  <p>{event.content}</p>
+                  <ReactMarkdown>{event.content}</ReactMarkdown>
                 </div>
               )}
             </div>

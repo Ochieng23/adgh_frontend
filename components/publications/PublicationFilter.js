@@ -52,7 +52,7 @@ export default function PublicationFilter({ total }) {
         />
       </div>
 
-      <div className="flex flex-wrap gap-3 items-center">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
         {/* Category tabs */}
         <div role="tablist" aria-label="Filter by category" className="flex flex-wrap gap-2">
           {categories.map((cat) => (
@@ -74,7 +74,7 @@ export default function PublicationFilter({ total }) {
         </div>
 
         {/* Year filter */}
-        <div className="relative ml-auto">
+        <div className="relative sm:ml-auto">
           <label htmlFor="year-filter" className="sr-only">Filter by year</label>
           <select
             id="year-filter"

@@ -119,7 +119,7 @@ export default function NewsArticlePage({ params }) {
 
           {/* Author bio */}
           {article.author && (
-            <div className="mt-10 p-6 bg-white dark:bg-forest rounded-2xl border border-body/10 dark:border-gold/10 flex gap-4">
+            <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-body/10 bg-white p-6 sm:flex-row dark:border-gold/10 dark:bg-forest">
               <div className="w-12 h-12 rounded-full bg-sage/20 flex items-center justify-center flex-shrink-0">
                 <User className="w-6 h-6 text-gold" aria-hidden="true" />
               </div>

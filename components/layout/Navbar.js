@@ -81,8 +81,8 @@ export default function Navbar() {
               className="flex flex-shrink-0 items-center overflow-visible rounded-md focus-visible:ring-2 focus-visible:ring-gold"
               aria-label="African Democracy & Governance Hub Home"
             >
-              <div className="w-[136px] overflow-visible sm:w-[164px] lg:w-[188px]">
-                <BrandLogo priority className="w-[182%] max-w-none" />
+              <div className="w-[108px] overflow-visible sm:w-[132px] lg:w-[188px]">
+                <BrandLogo priority className="w-[172%] max-w-none sm:w-[176%] lg:w-[182%]" />
               </div>
             </Link>
 

@@ -88,7 +88,7 @@ export default function WhoWeArePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-deep/40 to-transparent" aria-hidden="true" />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-gold text-deep px-6 py-4 rounded-xl shadow-lg">
+              <div className="mt-4 inline-block rounded-xl bg-gold px-5 py-3 text-deep shadow-lg sm:absolute sm:-bottom-6 sm:-left-6 sm:mt-0 sm:px-6 sm:py-4">
                 <p className="font-serif text-2xl font-semibold">100%</p>
                 <p className="font-sans text-xs font-medium">African-Led</p>
               </div>
@@ -141,7 +141,7 @@ export default function WhoWeArePage() {
               const Icon = pillar.icon
               return (
                 <AnimatedSection key={pillar.title} delay={i * 0.1}>
-                  <div className="h-full bg-white dark:bg-forest rounded-2xl p-8 border border-body/10 dark:border-gold/10 hover:border-gold/30 transition-colors">
+                  <div className="h-full rounded-2xl border border-body/10 bg-white p-6 transition-colors hover:border-gold/30 sm:p-8 dark:border-gold/10 dark:bg-forest">
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-gold" aria-hidden="true" />
                     </div>

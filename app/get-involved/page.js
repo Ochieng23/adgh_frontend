@@ -122,7 +122,7 @@ export default function GetInvolvedPage() {
 
           {/* Partner form */}
           {activeTab === 'partner' && (
-            <div id="panel-partner" role="tabpanel" aria-label="Partner With Us" className="bg-white dark:bg-forest rounded-2xl p-8 border border-body/10 dark:border-gold/10">
+            <div id="panel-partner" role="tabpanel" aria-label="Partner With Us" className="rounded-2xl border border-body/10 bg-white p-6 sm:p-8 dark:border-gold/10 dark:bg-forest">
               <h2 className="font-serif text-2xl font-light text-deep dark:text-cream mb-2">Partner With Us</h2>
               <p className="text-sm font-sans text-muted mb-6 leading-relaxed">
                 We welcome institutional partnerships with governments, civil society organisations, academic institutions, and international bodies committed to democratic governance in Africa.
@@ -144,7 +144,7 @@ export default function GetInvolvedPage() {
 
           {/* Support */}
           {activeTab === 'support' && (
-            <div id="panel-support" role="tabpanel" aria-label="Support Our Work" className="bg-white dark:bg-forest rounded-2xl p-8 border border-body/10 dark:border-gold/10">
+            <div id="panel-support" role="tabpanel" aria-label="Support Our Work" className="rounded-2xl border border-body/10 bg-white p-6 sm:p-8 dark:border-gold/10 dark:bg-forest">
               <h2 className="font-serif text-2xl font-light text-deep dark:text-cream mb-4">Support Our Work</h2>
               <p className="text-sm font-sans text-muted mb-6 leading-relaxed">
                 Your support enables ADGH to continue advancing democratic governance across Africa. We accept institutional grants, philanthropic gifts, and programme sponsorships.
@@ -162,7 +162,7 @@ export default function GetInvolvedPage() {
                   </div>
                 ))}
               </div>
-              <Button href="/contact?subject=Partnership" variant="primary" size="lg">
+              <Button href="/contact?subject=Partnership" variant="primary" size="lg" className="w-full justify-center sm:w-auto">
                 Discuss Funding Opportunities
               </Button>
             </div>
@@ -170,7 +170,7 @@ export default function GetInvolvedPage() {
 
           {/* Network */}
           {activeTab === 'network' && (
-            <div id="panel-network" role="tabpanel" aria-label="Join Our Network" className="bg-white dark:bg-forest rounded-2xl p-8 border border-body/10 dark:border-gold/10">
+            <div id="panel-network" role="tabpanel" aria-label="Join Our Network" className="rounded-2xl border border-body/10 bg-white p-6 sm:p-8 dark:border-gold/10 dark:bg-forest">
               <h2 className="font-serif text-2xl font-light text-deep dark:text-cream mb-2">Join Our Network</h2>
               <p className="text-sm font-sans text-muted mb-6 leading-relaxed">
                 Join our growing continental network of governance practitioners, researchers, civil society activists, and democratic governance advocates.

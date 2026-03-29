@@ -50,7 +50,7 @@ export default function Footer() {
               </h2>
               <p className="font-sans text-sm text-cream/65">{strings.newsletterSubtext}</p>
             </div>
-            <div className="w-full md:w-auto md:min-w-[380px]">
+            <div className="w-full md:w-auto md:min-w-[320px] lg:min-w-[380px]">
               <NewsletterForm compact tone="dark" />
             </div>
           </div>

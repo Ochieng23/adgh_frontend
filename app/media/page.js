@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { FileText, Mic, Camera, ArrowRight, Download } from 'lucide-react'
 import { buildMetadata } from '@/lib/metadata'
+import { getAllContent } from '@/lib/content'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import SectionLabel from '@/components/ui/SectionLabel'
@@ -13,20 +14,12 @@ export const metadata = buildMetadata({
   path: '/media',
 })
 
-const pressReleases = [
-  { title: 'ADGH Launches Continental Governance Monitoring Initiative', date: '2024-10-01', href: '/news/adgh-launch-governance-monitoring' },
-  { title: 'ADGH Signs MOU with ECOWAS Commission', date: '2024-09-15', href: '#' },
-  { title: 'New Research: Electoral Integrity in West Africa 2024', date: '2024-11-20', href: '#' },
-]
-
-const mediaAssets = [
-  { title: 'ADGH Full Logo Package (PNG, SVG, PDF)', type: 'ZIP', size: '4.8 MB' },
-  { title: 'Brand Guidelines Document', type: 'PDF', size: '2.1 MB' },
-  { title: 'Executive Biography — Gabriella Lorere', type: 'PDF', size: '380 KB' },
-  { title: 'Organisation Fact Sheet', type: 'PDF', size: '520 KB' },
-]
-
 export default function MediaPage() {
+  const pressReleases = getAllContent('news')
+    .filter((item) => item.category === 'Press Release')
+    .slice(0, 4)
+  const mediaAssets = getAllContent('media')
+
   return (
     <div className="min-h-screen bg-warm dark:bg-deep">
       <div className="bg-deep pt-32 pb-16">
@@ -56,21 +49,27 @@ export default function MediaPage() {
                 <h2 className="font-serif text-2xl font-light text-deep dark:text-cream">Recent Press Releases</h2>
               </div>
               <div className="space-y-3">
-                {pressReleases.map((pr) => (
-                  <Link
-                    key={pr.title}
-                    href={pr.href}
-                    className="flex items-center justify-between gap-4 p-5 rounded-xl bg-white dark:bg-forest border border-body/10 dark:border-gold/10 hover:border-gold/30 group transition-colors focus-visible:ring-2 focus-visible:ring-gold"
-                  >
-                    <div>
-                      <p className="font-sans font-medium text-body dark:text-cream text-sm group-hover:text-gold transition-colors">{pr.title}</p>
-                      <time dateTime={pr.date} className="text-xs font-sans text-muted mt-0.5 block">
-                        {new Date(pr.date).toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })}
-                      </time>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-gold flex-shrink-0" aria-hidden="true" />
-                  </Link>
-                ))}
+                {pressReleases.length > 0 ? (
+                  pressReleases.map((pr) => (
+                    <Link
+                      key={pr.slug}
+                      href={`/news/${pr.slug}`}
+                      className="flex flex-col items-start gap-4 rounded-xl border border-body/10 bg-white p-5 transition-colors group hover:border-gold/30 focus-visible:ring-2 focus-visible:ring-gold sm:flex-row sm:items-center sm:justify-between dark:border-gold/10 dark:bg-forest"
+                    >
+                      <div>
+                        <p className="font-sans font-medium text-body dark:text-cream text-sm group-hover:text-gold transition-colors">{pr.title}</p>
+                        <time dateTime={pr.date} className="text-xs font-sans text-muted mt-0.5 block">
+                          {new Date(pr.date).toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        </time>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-gold flex-shrink-0" aria-hidden="true" />
+                    </Link>
+                  ))
+                ) : (
+                  <div className="rounded-xl border border-dashed border-body/15 bg-white px-5 py-6 text-sm font-sans text-muted dark:border-gold/10 dark:bg-forest">
+                    No press releases yet. Add the first one from the admin dashboard under News.
+                  </div>
+                )}
               </div>
               <div className="mt-4">
                 <Link href="/news?category=Press+Release" className="text-gold hover:text-gold-light text-sm font-sans flex items-center gap-1.5 group focus-visible:ring-2 focus-visible:ring-gold rounded">
@@ -89,18 +88,40 @@ export default function MediaPage() {
                 <h2 className="font-serif text-2xl font-light text-deep dark:text-cream">Media Kit</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {mediaAssets.map((asset) => (
-                  <div key={asset.title} className="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-forest border border-body/10 dark:border-gold/10 hover:border-gold/30 transition-colors">
-                    <FileText className="w-6 h-6 text-muted flex-shrink-0" aria-hidden="true" />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs font-sans font-medium text-body dark:text-cream line-clamp-2">{asset.title}</p>
-                      <p className="text-xs font-sans text-muted mt-0.5">{asset.type} · {asset.size}</p>
+                {mediaAssets.length > 0 ? (
+                  mediaAssets.map((asset) => (
+                    <div key={asset.slug} className="flex flex-col items-start gap-3 rounded-xl border border-body/10 bg-white p-4 transition-colors hover:border-gold/30 sm:flex-row dark:border-gold/10 dark:bg-forest">
+                      <FileText className="w-6 h-6 text-muted flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs font-sans font-medium text-body dark:text-cream line-clamp-2">{asset.title}</p>
+                        <p className="text-xs font-sans text-muted mt-0.5">
+                          {asset.type}
+                          {asset.size ? ` · ${asset.size}` : ''}
+                        </p>
+                        {asset.excerpt && (
+                          <p className="mt-1.5 text-xs font-sans leading-relaxed text-muted line-clamp-2">{asset.excerpt}</p>
+                        )}
+                      </div>
+                      {asset.assetUrl ? (
+                        <a
+                          href={asset.assetUrl}
+                          aria-label={`Download ${asset.title}`}
+                          className="text-gold hover:text-gold-light flex-shrink-0 focus-visible:ring-2 focus-visible:ring-gold rounded"
+                        >
+                          <Download className="w-4 h-4" aria-hidden="true" />
+                        </a>
+                      ) : (
+                        <span className="flex-shrink-0 text-[11px] font-sans uppercase tracking-[0.18em] text-muted">
+                          On Request
+                        </span>
+                      )}
                     </div>
-                    <a href="#" aria-label={`Download ${asset.title}`} className="text-gold hover:text-gold-light flex-shrink-0 focus-visible:ring-2 focus-visible:ring-gold rounded">
-                      <Download className="w-4 h-4" aria-hidden="true" />
-                    </a>
+                  ))
+                ) : (
+                  <div className="sm:col-span-2 rounded-xl border border-dashed border-body/15 bg-white px-5 py-6 text-sm font-sans text-muted dark:border-gold/10 dark:bg-forest">
+                    No media assets yet. Add downloadable files from the admin dashboard under Media Kit.
                   </div>
-                ))}
+                )}
               </div>
             </AnimatedSection>
           </div>

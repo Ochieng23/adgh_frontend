@@ -1,7 +1,6 @@
 import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
-import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
+import SiteChrome from '@/components/layout/SiteChrome'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -66,7 +65,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
       className={`${cormorant.variable} ${dmSans.variable}`}
     >
-      <body className="bg-white font-sans antialiased text-body">
+      <body className="overflow-x-hidden bg-white font-sans antialiased text-body">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {/* Skip to content for accessibility */}
           <a
@@ -75,11 +74,7 @@ export default function RootLayout({ children }) {
           >
             Skip to main content
           </a>
-          <Navbar />
-          <main id="main-content" tabIndex={-1} className="relative">
-            {children}
-          </main>
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
       </body>
     </html>

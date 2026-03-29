@@ -38,7 +38,7 @@ export default function MobileMenu({ isOpen, onClose, navItems, pathname }) {
           <Link
             href="/"
             onClick={onClose}
-            className="w-[142px] focus-visible:ring-2 focus-visible:ring-gold"
+            className="w-[118px] focus-visible:ring-2 focus-visible:ring-gold sm:w-[132px]"
             aria-label="African Democracy & Governance Hub Home"
           >
             <BrandLogo />

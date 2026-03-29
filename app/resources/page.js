@@ -73,7 +73,7 @@ export default function ResourcesPage() {
                 {section.items.map((item) => (
                   <div
                     key={item.title}
-                    className="flex items-center gap-4 p-5 rounded-xl bg-white dark:bg-forest border border-body/10 dark:border-gold/10 hover:border-gold/30 transition-colors group"
+                    className="flex flex-col items-start gap-4 rounded-xl border border-body/10 bg-white p-5 transition-colors group hover:border-gold/30 sm:flex-row sm:items-center dark:border-gold/10 dark:bg-forest"
                   >
                     <FileText className="w-8 h-8 text-muted flex-shrink-0" aria-hidden="true" />
                     <div className="flex-1 min-w-0">
@@ -84,7 +84,7 @@ export default function ResourcesPage() {
                     </div>
                     <a
                       href="#"
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold/10 text-gold hover:bg-gold hover:text-deep transition-colors text-xs font-sans font-medium flex-shrink-0 focus-visible:ring-2 focus-visible:ring-gold"
+                      className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-gold/10 px-3 py-1.5 text-xs font-sans font-medium text-gold transition-colors hover:bg-gold hover:text-deep focus-visible:ring-2 focus-visible:ring-gold sm:w-auto"
                       aria-label={`Download ${item.title}`}
                     >
                       {item.external ? (
