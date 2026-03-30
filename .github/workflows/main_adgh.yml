@@ -27,16 +27,27 @@ jobs:
         run: |
           npm install
           npm run build --if-present
+          test -f .next/standalone/server.js
           npm run test --if-present
         env:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
 
+      - name: Prepare standalone artifact for deployment
+        run: |
+          rm -rf release release.zip
+          mkdir -p release/.next
+          cp -r .next/standalone/. release/
+          cp -r .next/static release/.next/static
+          cp -r public release/public
+          cd release
+          zip -r ../release.zip .
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -50,7 +61,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -64,5 +75,5 @@ jobs:
         with:
           app-name: 'adgh'
           slot-name: 'Production'
-          package: .
+          package: release.zip
           
