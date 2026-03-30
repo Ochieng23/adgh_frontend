@@ -27,6 +27,7 @@ jobs:
         run: |
           npm install
           npm run build --if-present
+          find .next -maxdepth 3 -type f -name "*.js" | head -20
           test -f .next/standalone/server.js
           npm run test --if-present
         env:
