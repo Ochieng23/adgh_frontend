@@ -46,7 +46,7 @@ export default function LeadershipPage() {
               <div className="relative sm:pb-14">
                 <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80"
+                    src={ceo.image}
                     alt={`${ceo.name} — ${ceo.role}`}
                     fill
                     className="object-cover"
