@@ -7,9 +7,9 @@ import SectionLabel from '@/components/ui/SectionLabel'
 import { strings } from '@/lib/strings'
 
 const stats = [
-  { value: strings.impactStat1Value, label: strings.impactStat1Label, numericEnd: 54 },
+  { value: strings.impactStat1Value, label: strings.impactStat1Label, numericEnd: 47 },
   { value: strings.impactStat2Value, label: strings.impactStat2Label, numericEnd: 6 },
-  { value: strings.impactStat3Value, label: strings.impactStat3Label, numericEnd: 2063 },
+  { value: strings.impactStat3Value, label: strings.impactStat3Label, numericEnd: 290 },
   { value: strings.impactStat4Value, label: strings.impactStat4Label, numericEnd: 100 },
 ]
 

@@ -3,6 +3,7 @@ import HeroSection from '@/components/home/HeroSection'
 import MissionVisionSection from '@/components/home/MissionVisionSection'
 import ObjectivesSection from '@/components/home/ObjectivesSection'
 import ImpactNumbers from '@/components/home/ImpactNumbers'
+import SdgSection from '@/components/home/SdgSection'
 import FeaturedPublications from '@/components/home/FeaturedPublications'
 import NewsPreview from '@/components/home/NewsPreview'
 import PartnersStrip from '@/components/home/PartnersStrip'
@@ -21,6 +22,7 @@ export default function HomePage() {
       <MissionVisionSection />
       <ObjectivesSection />
       <ImpactNumbers />
+      <SdgSection />
       <FeaturedPublications />
       <NewsPreview />
       <PartnersStrip />
