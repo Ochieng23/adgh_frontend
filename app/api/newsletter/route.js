@@ -1,9 +1,28 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
+import fs from 'fs'
+import path from 'path'
 
 const newsletterSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
 })
+
+const STORE_PATH = path.join(process.cwd(), 'data', 'subscribers.json')
+
+function readSubscribers() {
+  if (!fs.existsSync(STORE_PATH)) return []
+  try {
+    return JSON.parse(fs.readFileSync(STORE_PATH, 'utf8'))
+  } catch {
+    return []
+  }
+}
+
+function writeSubscribers(subscribers) {
+  const dir = path.dirname(STORE_PATH)
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
+  fs.writeFileSync(STORE_PATH, JSON.stringify(subscribers, null, 2), 'utf8')
+}
 
 export async function POST(request) {
   try {
@@ -18,15 +37,16 @@ export async function POST(request) {
     }
 
     const { email } = result.data
+    const subscribers = readSubscribers()
 
-    // TODO: Integrate with Mailchimp, ConvertKit, or other email service
-    // For now, log to console in development
-    console.log(`[ADGH Newsletter] New subscription: ${email}`)
+    if (subscribers.some((s) => s.email === email)) {
+      return NextResponse.json({ success: true, message: 'You are already subscribed!' })
+    }
 
-    return NextResponse.json({
-      success: true,
-      message: 'You have been subscribed!',
-    })
+    subscribers.push({ email, subscribedAt: new Date().toISOString() })
+    writeSubscribers(subscribers)
+
+    return NextResponse.json({ success: true, message: 'You have been subscribed!' })
   } catch (error) {
     console.error('Newsletter signup error:', error)
     return NextResponse.json(

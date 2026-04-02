@@ -111,17 +111,30 @@ export default function LeadershipPage() {
             <GoldDivider className="mt-4" width="w-16" />
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {boardMembers.map((member, i) => (
-              <AnimatedSection key={member.name} delay={i * 0.08}>
-                <div className="bg-warm dark:bg-deep rounded-xl p-5 border border-body/10 dark:border-gold/10">
-                  <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-3 font-serif text-gold font-semibold text-lg">
-                    {member.name.charAt(0)}
+              <AnimatedSection key={member.name} delay={i * 0.08} className="h-full">
+                <div className="h-full flex flex-col rounded-2xl overflow-hidden border border-body/10 dark:border-gold/10 bg-warm dark:bg-deep shadow-md">
+                  <div className="relative aspect-[3/4] w-full">
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gold/10 font-serif text-gold font-semibold text-4xl">
+                        {member.name.charAt(0)}
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-transparent to-transparent" aria-hidden="true" />
                   </div>
-                  <h3 className="font-serif font-semibold text-deep dark:text-cream">{member.name}</h3>
-                  <p className="text-xs font-sans text-gold mt-0.5">{member.role}</p>
-                  <p className="text-xs font-sans text-muted mt-1">{member.affiliation}</p>
-                  <p className="text-xs font-sans text-muted/70 mt-0.5">{member.country}</p>
+                  <div className="p-5">
+                    <h3 className="font-serif font-semibold text-deep dark:text-cream">{member.name}</h3>
+                    <p className="text-xs font-sans text-gold mt-1 leading-relaxed">{member.role}</p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
@@ -138,17 +151,29 @@ export default function LeadershipPage() {
               Advisory Panel
             </h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {advisors.map((advisor, i) => (
-              <AnimatedSection key={advisor.name} delay={i * 0.06}>
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-forest border border-body/10 dark:border-gold/10">
-                  <div className="w-10 h-10 rounded-full bg-sage/20 flex items-center justify-center flex-shrink-0 font-serif text-gold text-sm font-semibold">
-                    {advisor.name.charAt(0)}
+              <AnimatedSection key={advisor.name} delay={i * 0.06} className="h-full">
+                <div className="h-full flex flex-col rounded-2xl overflow-hidden border border-body/10 dark:border-gold/10 bg-white dark:bg-forest shadow-md">
+                  <div className="relative aspect-[3/4] w-full">
+                    {advisor.image ? (
+                      <Image
+                        src={advisor.image}
+                        alt={advisor.name}
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-sage/20 font-serif text-gold font-semibold text-4xl">
+                        {advisor.name.charAt(0)}
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-transparent to-transparent" aria-hidden="true" />
                   </div>
-                  <div className="min-w-0">
-                    <p className="font-sans font-medium text-deep dark:text-cream text-sm truncate">{advisor.name}</p>
-                    <p className="font-sans text-xs text-muted truncate">{advisor.title}</p>
-                    <p className="font-sans text-xs text-gold/70">{advisor.country}</p>
+                  <div className="p-5">
+                    <p className="font-serif font-semibold text-deep dark:text-cream">{advisor.name}</p>
+                    <p className="font-sans text-xs text-gold mt-1 leading-relaxed">{advisor.role}</p>
                   </div>
                 </div>
               </AnimatedSection>
