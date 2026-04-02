@@ -48,7 +48,7 @@ export default function SdgSection() {
           </h2>
           <GoldDivider className="mt-4" width="w-16" />
           <p className="mt-4 font-sans text-sm text-muted max-w-2xl leading-relaxed">
-            ADGH's work is directly aligned with the United Nations 2030 Agenda. Our primary focus is <strong className="text-deep dark:text-cream">SDG 16</strong>, with our programmes contributing across four goals in total.
+            ADGH&apos;s work is directly aligned with the United Nations 2030 Agenda. Our primary focus is <strong className="text-deep dark:text-cream">SDG 16</strong>, with our programmes contributing across four goals in total.
           </p>
         </AnimatedSection>
 
