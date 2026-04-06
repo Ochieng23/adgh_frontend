@@ -7,7 +7,7 @@ const sdgs = [
     number: 16,
     title: 'Peace, Justice & Strong Institutions',
     description:
-      'Our primary mandate. ADGH works to build transparent, accountable, and inclusive institutions at every level of Kenyan governance — from ward committees to the national parliament.',
+      'Our primary mandate. ADGH works to build transparent, accountable, and inclusive institutions across Africa — from community governance to national parliaments and continental bodies.',
     colour: 'bg-[#00689D]',
     primary: true,
   },
@@ -15,7 +15,7 @@ const sdgs = [
     number: 10,
     title: 'Reduced Inequalities',
     description:
-      'We deliberately work in Kenya\'s marginalised and ASAL regions to ensure that democracy reaches citizens who are too often left behind by formal governance structures.',
+      'We deliberately work in Africa\'s marginalised and underserved regions to ensure that democracy reaches citizens who are too often left behind by formal governance structures.',
     colour: 'bg-[#DD1367]',
     primary: false,
   },
@@ -23,7 +23,7 @@ const sdgs = [
     number: 5,
     title: 'Gender Equality',
     description:
-      'We champion women\'s political participation and the implementation of Kenya\'s constitutional two-thirds gender principle across all levels of government.',
+      'We champion women\'s political participation and gender-inclusive governance across all levels of African government, aligned with the AU\'s gender parity commitments.',
     colour: 'bg-[#FF3A21]',
     primary: false,
   },
