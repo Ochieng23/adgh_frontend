@@ -60,7 +60,7 @@ export default function Footer() {
       {/* Main footer grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Col 1 — Brand */}
+          {/* Col 1 - Brand */}
           <div>
             <Link
               href="/"
@@ -101,7 +101,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2 — Who We Are */}
+          {/* Col 2 - Who We Are */}
           <div>
             <h3 className="font-sans font-semibold text-sm text-gold/70 tracking-widest uppercase mb-4">
               Who We Are
@@ -120,7 +120,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3 — Our Work */}
+          {/* Col 3 - Our Work */}
           <div>
             <h3 className="font-sans font-semibold text-sm text-gold/70 tracking-widest uppercase mb-4">
               Our Work
@@ -139,7 +139,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4 — Quick Links */}
+          {/* Col 4 - Quick Links */}
           <div>
             <h3 className="font-sans font-semibold text-sm text-gold/70 tracking-widest uppercase mb-4">
               Quick Links

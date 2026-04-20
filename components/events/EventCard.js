@@ -53,7 +53,7 @@ export default function EventCard({ title, type, date, endDate, location, excerp
         )}
         {endDate && (
           <p className="text-xs font-sans text-muted mb-2">
-            {formatDate(date, 'MMM d')} – {formatDate(endDate, 'MMM d, yyyy')}
+            {formatDate(date, 'MMM d')} - {formatDate(endDate, 'MMM d, yyyy')}
           </p>
         )}
         {excerpt && (

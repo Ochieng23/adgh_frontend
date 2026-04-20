@@ -1,5 +1,5 @@
 ---
-title: "Webinar: Unconstitutional Changes of Government — Trends and Responses"
+title: "Webinar: Unconstitutional Changes of Government - Trends and Responses"
 slug: "ucg-trends-responses-webinar-2025"
 type: "Webinar"
 date: "2025-01-22"

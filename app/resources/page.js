@@ -34,8 +34,8 @@ const resources = [
     category: 'Data & Research',
     icon: Globe,
     items: [
-      { title: 'African Governance Indicators Dataset 2024', type: 'XLSX', size: '4.2 MB' },
-      { title: 'Electoral Calendar Africa 2025', type: 'PDF', size: '650 KB' },
+      { title: 'African Governance Indicators Dataset 2026', type: 'XLSX', size: '4.2 MB' },
+      { title: 'Electoral Calendar Africa 2026', type: 'PDF', size: '650 KB' },
       { title: 'Governance Trends Report: Raw Data', type: 'CSV', size: '890 KB' },
     ],
   },

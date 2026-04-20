@@ -22,7 +22,7 @@ const dmSans = DM_Sans({
 
 export const metadata = {
   title: {
-    default: 'ADGH — African Democracy and Governance Hub',
+    default: 'ADGH - African Democracy and Governance Hub',
     template: '%s | ADGH',
   },
   description:
@@ -38,18 +38,18 @@ export const metadata = {
   ],
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://adgh.org'),
   openGraph: {
-    title: 'ADGH — African Democracy and Governance Hub',
+    title: 'ADGH - African Democracy and Governance Hub',
     description:
       'Empowering citizens, strengthening democratic institutions, and promoting accountability through evidence-based advocacy across Africa.',
     url: '/',
     siteName: 'African Democracy and Governance Hub',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'ADGH — African Democracy and Governance Hub' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'ADGH - African Democracy and Governance Hub' }],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ADGH — African Democracy and Governance Hub',
+    title: 'ADGH - African Democracy and Governance Hub',
     description: 'Empowering democratic governance across Africa.',
     images: ['/og-image.jpg'],
   },

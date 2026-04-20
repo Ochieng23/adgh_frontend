@@ -9,7 +9,7 @@ import { BookOpen, Scale, Users, Lightbulb } from 'lucide-react'
 
 export const metadata = buildMetadata({
   title: 'Who We Are',
-  description: 'Learn about the African Democracy and Governance Hub — our story, mission, vision, and the pillars that guide our work.',
+  description: 'Learn about the African Democracy and Governance Hub - our story, mission, vision, and the pillars that guide our work.',
   path: '/who-we-are',
 })
 
@@ -17,7 +17,7 @@ const pillars = [
   {
     icon: Scale,
     title: 'Legal & Policy Frameworks',
-    desc: 'Rooted in ACDEG, AU Agenda 2063, and SDG 16 — our work is anchored in the continent\'s foremost democratic governance instruments.',
+    desc: 'Rooted in ACDEG, AU Agenda 2063, and SDG 16 - our work is anchored in the continent\'s foremost democratic governance instruments.',
   },
   {
     icon: BookOpen,
@@ -27,7 +27,7 @@ const pillars = [
   {
     icon: Users,
     title: 'Democratic Processes & Reforms',
-    desc: 'From elections and civil society to institutional reform — we support the full spectrum of democratic governance transformation.',
+    desc: 'From elections and civil society to institutional reform - we support the full spectrum of democratic governance transformation.',
   },
   {
     icon: Lightbulb,
@@ -66,10 +66,10 @@ export default function WhoWeArePage() {
               <GoldDivider className="mt-4 mb-6" width="w-16" />
               <div className="space-y-4 font-sans text-body dark:text-cream/80 leading-relaxed">
                 <p>
-                  The African Democracy and Governance Hub was founded with a singular conviction: that democratic governance in Africa must be championed, sustained, and advanced by Africans — drawing on the continent&apos;s rich traditions of community governance, consensus-building, and collective accountability.
+                  The African Democracy and Governance Hub was founded with a singular conviction: that democratic governance in Africa must be championed, sustained, and advanced by Africans - drawing on the continent&apos;s rich traditions of community governance, consensus-building, and collective accountability.
                 </p>
                 <p>
-                  Established as an independent, non-partisan institution, ADGH was created to fill a critical gap in the African governance landscape — an organisation with deep continental roots, rigorous research capabilities, and the convening power to bring together governments, civil society, academia, and citizens around shared democratic governance goals.
+                  Established as an independent, non-partisan institution, ADGH was created to fill a critical gap in the African governance landscape - an organisation with deep continental roots, rigorous research capabilities, and the convening power to bring together governments, civil society, academia, and citizens around shared democratic governance goals.
                 </p>
                 <p>
                   Our founding mandate aligns fully with the African Charter on Democracy, Elections and Governance (ACDEG) and the African Union&apos;s Agenda 2063 vision of &ldquo;An Africa of good governance, democracy, respect for human rights, justice and the rule of law.&rdquo;

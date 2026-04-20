@@ -6,7 +6,7 @@ import { Search, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const categories = ['All', 'Research Paper', 'Policy Brief', 'Report', 'Toolkit', 'Working Paper']
-const years = ['All Years', '2025', '2024', '2023', '2022', '2021']
+const years = ['All Years', '2026', '2025', '2024', '2023', '2022', '2021']
 
 export default function PublicationFilter({ total }) {
   const router = useRouter()

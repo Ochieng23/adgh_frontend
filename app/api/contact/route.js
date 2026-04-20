@@ -43,14 +43,14 @@ export async function POST(request) {
         from:    `"ADGH Website" <${process.env.SMTP_USER}>`,
         to:      process.env.CONTACT_EMAIL || process.env.SMTP_USER,
         replyTo: email,
-        subject: `[ADGH Contact] ${subject} — ${name}`,
+        subject: `[ADGH Contact] ${subject} - ${name}`,
         text:    `Name: ${name}\nEmail: ${email}\nOrganisation: ${organisation || 'N/A'}\nSubject: ${subject}\n\nMessage:\n${message}`,
         html: `
           <h2 style="color:#0E1A14;font-family:Georgia,serif;">New Contact Enquiry</h2>
           <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:system-ui,sans-serif;font-size:14px;">
             <tr><td style="padding:8px 0;color:#7A8C7F;width:130px;">Name</td><td style="padding:8px 0;color:#3A4A3E;">${esc(name)}</td></tr>
             <tr><td style="padding:8px 0;color:#7A8C7F;">Email</td><td style="padding:8px 0;"><a href="mailto:${esc(email)}" style="color:#C9973A;">${esc(email)}</a></td></tr>
-            <tr><td style="padding:8px 0;color:#7A8C7F;">Organisation</td><td style="padding:8px 0;color:#3A4A3E;">${esc(organisation) || '—'}</td></tr>
+            <tr><td style="padding:8px 0;color:#7A8C7F;">Organisation</td><td style="padding:8px 0;color:#3A4A3E;">${esc(organisation) || '-'}</td></tr>
             <tr><td style="padding:8px 0;color:#7A8C7F;">Subject</td><td style="padding:8px 0;color:#3A4A3E;">${esc(subject)}</td></tr>
           </table>
           <div style="margin-top:16px;padding:16px;background:#FAF7F2;border-left:4px solid #C9973A;border-radius:4px;">

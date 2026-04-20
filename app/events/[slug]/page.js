@@ -54,7 +54,7 @@ export default function EventPage({ params }) {
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4 text-gold flex-shrink-0" aria-hidden="true" />
                 {event.endDate
-                  ? `${formatDate(event.date, 'MMM d')} – ${formatDate(event.endDate, 'MMM d, yyyy')}`
+                  ? `${formatDate(event.date, 'MMM d')} - ${formatDate(event.endDate, 'MMM d, yyyy')}`
                   : formatDate(event.date)}
               </span>
             )}
@@ -89,7 +89,7 @@ export default function EventPage({ params }) {
                 <h2 className="font-serif text-lg font-semibold text-deep dark:text-cream mb-4">Event Details</h2>
                 <dl className="space-y-3 text-sm font-sans">
                   {event.type && <div><dt className="text-muted text-xs uppercase tracking-wide">Type</dt><dd className="text-body dark:text-cream mt-0.5">{event.type}</dd></div>}
-                  {event.date && <div><dt className="text-muted text-xs uppercase tracking-wide">Date</dt><dd className="text-body dark:text-cream mt-0.5">{formatDate(event.date)}{event.endDate ? ` – ${formatDate(event.endDate)}` : ''}</dd></div>}
+                  {event.date && <div><dt className="text-muted text-xs uppercase tracking-wide">Date</dt><dd className="text-body dark:text-cream mt-0.5">{formatDate(event.date)}{event.endDate ? ` - ${formatDate(event.endDate)}` : ''}</dd></div>}
                   {event.location && <div><dt className="text-muted text-xs uppercase tracking-wide">Location</dt><dd className="text-body dark:text-cream mt-0.5">{event.location}</dd></div>}
                 </dl>
                 <div className="mt-5">

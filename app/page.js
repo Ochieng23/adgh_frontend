@@ -10,7 +10,7 @@ import PartnersStrip from '@/components/home/PartnersStrip'
 import NewsletterBanner from '@/components/home/NewsletterBanner'
 
 export const metadata = buildMetadata({
-  title: 'ADGH — African Democracy and Governance Hub',
+  title: 'ADGH - African Democracy and Governance Hub',
   description: 'Empowering citizens, strengthening democratic institutions, and promoting accountability through evidence-based advocacy across Africa.',
   path: '/',
 })

@@ -47,7 +47,7 @@ export default function LeadershipPage() {
                 <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl">
                   <Image
                     src={ceo.image}
-                    alt={`${ceo.name} — ${ceo.role}`}
+                    alt={`${ceo.name} - ${ceo.role}`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 40vw"
@@ -142,45 +142,7 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      {/* Advisory panel */}
-      <section className="py-16" aria-labelledby="advisory-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="mb-8">
-            <SectionLabel>Expert Guidance</SectionLabel>
-            <h2 id="advisory-heading" className="mt-2 font-serif font-light text-deep dark:text-cream" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
-              Advisory Panel
-            </h2>
-          </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {advisors.map((advisor, i) => (
-              <AnimatedSection key={advisor.name} delay={i * 0.06} className="h-full">
-                <div className="h-full flex flex-col rounded-2xl overflow-hidden border border-body/10 dark:border-gold/10 bg-white dark:bg-forest shadow-md">
-                  <div className="relative aspect-[3/4] w-full">
-                    {advisor.image ? (
-                      <Image
-                        src={advisor.image}
-                        alt={advisor.name}
-                        fill
-                        className="object-cover object-top"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-sage/20 font-serif text-gold font-semibold text-4xl">
-                        {advisor.name.charAt(0)}
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-transparent to-transparent" aria-hidden="true" />
-                  </div>
-                  <div className="p-5">
-                    <p className="font-serif font-semibold text-deep dark:text-cream">{advisor.name}</p>
-                    <p className="font-sans text-xs text-gold mt-1 leading-relaxed">{advisor.role}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Advisory panel - temporarily redacted */}
     </div>
   )
 }

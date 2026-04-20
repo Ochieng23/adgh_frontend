@@ -7,7 +7,7 @@ const sdgs = [
     number: 16,
     title: 'Peace, Justice & Strong Institutions',
     description:
-      'Our primary mandate. ADGH works to build transparent, accountable, and inclusive institutions across Africa — from community governance to national parliaments and continental bodies.',
+      'Our primary mandate. ADGH works to build transparent, accountable, and inclusive institutions across Africa - from community governance to national parliaments and continental bodies.',
     colour: 'bg-[#00689D]',
     primary: true,
   },

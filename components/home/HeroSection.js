@@ -8,7 +8,7 @@ import { strings } from '@/lib/strings'
 
 const quotes = [
   {
-    text: 'Democracy is not just about elections — it is about how power is exercised every day.',
+    text: 'Democracy is not just about elections - it is about how power is exercised every day.',
     author: 'Nelson Mandela',
     role: 'Former President of South Africa',
   },
@@ -18,7 +18,7 @@ const quotes = [
     role: 'Former UN Secretary-General',
   },
   {
-    text: "Africa's greatest resource is not its minerals — it is its people, governed well.",
+    text: "Africa's greatest resource is not its minerals - it is its people, governed well.",
     author: 'Ellen Johnson Sirleaf',
     role: 'Former President of Liberia',
   },
@@ -111,7 +111,7 @@ export default function HeroSection() {
   const prefersReduced = useReducedMotion()
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden" aria-label="Hero — About African Democracy & Governance Hub">
+    <section className="relative flex min-h-screen items-center overflow-hidden" aria-label="Hero - About African Democracy & Governance Hub">
       <div
         className="absolute inset-0 opacity-[0.035]"
         style={{

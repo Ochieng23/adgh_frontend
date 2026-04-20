@@ -10,7 +10,7 @@ import { objectives } from '@/lib/data/objectives'
 
 export const metadata = buildMetadata({
   title: 'Our Work',
-  description: 'Explore the six strategic programme areas of the African Democracy and Governance Hub — from democratic principles to information exchange.',
+  description: 'Explore the six strategic programme areas of the African Democracy and Governance Hub - from democratic principles to information exchange.',
   path: '/our-work',
 })
 
