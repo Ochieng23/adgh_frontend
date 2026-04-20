@@ -1,9 +1,9 @@
 ---
-title: "Pan-African Governance Summit 2025"
+title: "Pan-African Governance Summit 2027"
 slug: "pan-african-governance-summit-2025"
 type: "Conference"
-date: "2025-03-15"
-endDate: "2025-03-17"
+date: "2027-03-15"
+endDate: "2027-03-17"
 location: "Addis Ababa, Ethiopia"
 status: "upcoming"
 excerpt: "A landmark convening of African governance practitioners, civil society leaders, policymakers, and youth representatives charting the future of democratic governance on the continent."
