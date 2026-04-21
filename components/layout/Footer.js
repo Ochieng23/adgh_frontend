@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Globe, Globe2, Link2, ExternalLink, Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import { strings } from '@/lib/strings'
 import NewsletterForm from '@/components/forms/NewsletterForm'
 
@@ -28,11 +28,23 @@ const footerLinks = {
   ],
 }
 
+const InstagramIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+  </svg>
+)
+
+const FacebookIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor" aria-hidden="true">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+)
+
 const socialLinks = [
-  { icon: Globe, href: '#', label: 'LinkedIn' },
-  { icon: Globe2, href: '#', label: 'Twitter/X' },
-  { icon: Link2, href: '#', label: 'Facebook' },
-  { icon: ExternalLink, href: '#', label: 'YouTube' },
+  { icon: InstagramIcon, href: 'https://www.instagram.com/2026adgh?utm_source=qr&igsh=MWk4Njg5eDNrNWY0eQ==', label: 'Instagram' },
+  { icon: FacebookIcon, href: 'https://www.facebook.com/share/1Rh4WRNjGC/', label: 'Facebook' },
 ]
 
 export default function Footer() {
@@ -93,9 +105,11 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-8 w-8 items-center justify-center rounded-full border border-cream/10 text-cream/55 transition-colors hover:border-gold hover:text-gold focus-visible:ring-2 focus-visible:ring-gold"
                 >
-                  <Icon className="w-3.5 h-3.5" aria-hidden="true" />
+                  <Icon />
                 </a>
               ))}
             </div>
